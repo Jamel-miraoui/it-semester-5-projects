@@ -1,0 +1,8 @@
+<!ELEMENT films (cd*) >
+<!ATTLIST films test CDATA #REQUIRED>
+<!ATTLIST films test1 CDATA #REQUIRED>
+<!ELEMENT film (title,categorie,dateSortie,cast)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT cat (#PCDATA)>
+<!ELEMENT dateSortie (#PCDATA)>
+<!ELEMENT cast (primary,second)>

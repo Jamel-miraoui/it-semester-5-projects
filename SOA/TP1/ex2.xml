@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cdtheque SYSTEM "ex2.dtd">
+<cdtheque date="2023-09-18" auteur="tet">
+    <cd>
+        <titre>Album 1</titre>
+        <artiste>Artiste 1</artiste>
+        <style>Style 1</style>
+    </cd>
+    <cd>
+        <titre>Album 2</titre>
+        <artiste>Artiste 2</artiste>
+    </cd>
+</cdtheque>

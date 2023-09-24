@@ -1,7 +1,12 @@
 void main()
 {
-  int i ;
-  for (i=0; i<100;i++){
-    if( i%2 == 0){print(i);}
-  } 
+  int number = 55 ;
+  bool premier = false ; 
+  for (int i=3; i<number ;i++){
+    if(number%i == 0){
+      premier = false ; 
+      break; }
+  }
+  if (premier==true){print("nombre premier");} 
+  else {print("nombre n'est pas premier");}
 }

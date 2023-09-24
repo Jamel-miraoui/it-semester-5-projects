@@ -1,8 +1,9 @@
-<!ELEMENT films (cd*) >
-<!ATTLIST films test CDATA #REQUIRED>
-<!ATTLIST films test1 CDATA #REQUIRED>
+<!ELEMENT films (film*) >
 <!ELEMENT film (title,categorie,dateSortie,cast)>
+<!ATTLIST film ref CDATA #REQUIRED>
 <!ELEMENT title (#PCDATA)>
-<!ELEMENT cat (#PCDATA)>
+<!ELEMENT categorie (#PCDATA)>
 <!ELEMENT dateSortie (#PCDATA)>
-<!ELEMENT cast (primary,second)>
+<!ELEMENT cast (primary,secondary?)>
+<!ELEMENT primary (#PCDATA)>
+<!ELEMENT secondary (#PCDATA)>

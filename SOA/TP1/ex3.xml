@@ -1,1 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE films SYSTEM "ex3.dtd">
+<films>
+    <film ref="0251262">
+        <title>The Shawshank Redemption</title>
+        <categorie>Drama</categorie>
+        <dateSortie>1994-09-23</dateSortie>
+        <cast>
+            <primary>Tim Robbins</primary>
+            <secondary>Morgan Freeman</secondary>
+        </cast>
+    </film>
+    <film ref="0212653">
+        <title>Pulp Fiction</title>
+        <categorie>Crime</categorie>
+        <dateSortie>1994-10-14</dateSortie>
+        <cast>
+            <primary>John Travolta</primary>
+            <secondary>Samuel L. Jackson</secondary>
+        </cast>
+    </film>
+</films>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<biblio>
+    <livre>
+        <!-- element enfant titre-->
+        <titre>Les Miserable</titre>
+        <auteur>Victor Hugo</auteur>
+        <nb_tomes>3</nb_tomes>
+    </livre>
+    <livre>
+        <titre>L'Assomoir</titre>
+        <auteur>Emile Zola</auteur>
+    </livre>
+    <livre>
+        <!-- element enfant titre-->
+        <titre>David Copperfield</titre>
+        <auteur>Charles Dickens</auteur>
+        <nb_tomes>3</nb_tomes>
+    </livre>
+</biblio>

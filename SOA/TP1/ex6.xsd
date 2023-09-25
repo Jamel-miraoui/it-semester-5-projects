@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="biblio" type="biblioType" />
+    <xs:complexType name="biblioType">
+        <xs:sequence>
+            <xs:element name="livre" type="livreType" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="livreType">
+        <xs:sequence>
+            <xs:element name="auteur" type="xs:string" />
+            <xs:element name="tomes" type="tomesType" />
+            <xs:element name="infosEdition" type="editionType" />
+        </xs:sequence>
+        <xs:attribute name="titre" type="titreType" use="required" />
+    </xs:complexType>
+    <xs:complexType name="tomesType">
+        <xs:sequence>
+            <xs:element name="tome" type="tomeType" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="editionType">
+        <xs:sequence>
+            <xs:element name="editeur" type="xs:string" />
+            <xs:element name="lieuEdition" type="xs:string" />
+            <xs:element name="dateEdition" type="dateType" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="tomeType">
+        <xs:sequence>
+            <xs:element name="pages" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="titreType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="2" />
+            <xs:maxLength value="30" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="dateType">
+
+        <xs:attribute name="annee" type="xs:int" use="required" />
+        <xs:attribute name="mois" type="moisType" />
+
+    </xs:complexType>
+    <xs:simpleType name="moisType">
+        <xs:union memberTypes="moisInt moisList" />
+    </xs:simpleType>
+    <xs:simpleType name="moisList">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Janvier" />
+            <xs:enumeration value="Fevrier" />
+            <xs:enumeration value="Mars" />
+            <xs:enumeration value="Avril" />
+            <xs:enumeration value="Mai" />
+            <xs:enumeration value="Juin" />
+            <xs:enumeration value="Juillet" />
+            <xs:enumeration value="Aout" />
+            <xs:enumeration value="Septembre" />
+            <xs:enumeration value="Octobre" />
+            <xs:enumeration value="Novembre" />
+            <xs:enumeration value="Decembre" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="moisInt">
+        <xs:restriction base="xs:int">
+            <xs:pattern value="01|02|03|04|05|06|07|08|09|10|11|12" />
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

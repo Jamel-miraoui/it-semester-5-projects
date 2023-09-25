@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<biblio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi="ex6.xsd">
+  <livre titre="Les Misérables">
+    <auteur>Victor Hugo</auteur>
+    <tomes>
+      <tome>
+        <pages>1200</pages>
+      </tome>
+      <tome>
+        <pages>1400</pages>
+      </tome>
+      <tome>
+        <pages>1600</pages>
+      </tome>
+    </tomes>
+    <infosEdition>
+      <editeur>Hachette</editeur>
+      <lieuEdition>Paris</lieuEdition>
+      <dateEdition annee="1862" mois="Octobre" />
+    </infosEdition>
+  </livre>
+  <livre titre="L'Assommoir">
+    <auteur>Émile Zola</auteur>
+    <tomes>
+      <tome>
+        <pages>1000</pages>
+      </tome>
+    </tomes>
+    <infosEdition>
+      <editeur>Charpentier</editeur>
+      <lieuEdition>Paris</lieuEdition>
+      <dateEdition annee="1877" mois="Avril" />
+    </infosEdition>
+  </livre>
+  <livre titre="David Copperfield">
+    <auteur>Charles Dickens</auteur>
+    <tomes>
+      <tome>
+        <pages>1100</pages>
+      </tome>
+      <tome>
+        <pages>1300</pages>
+      </tome>
+      <tome>
+        <pages>1500</pages>
+      </tome>
+    </tomes>
+    <infosEdition>
+      <editeur>Chapman and Hall</editeur>
+      <lieuEdition>Londres</lieuEdition>
+      <dateEdition annee="1850" mois="Novembre" />
+    </infosEdition>
+  </livre>
+</biblio>

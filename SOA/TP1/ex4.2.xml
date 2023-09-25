@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cv xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi="ex4.2.xsd">
+  <nom>jamel</nom>
+  <prenom>miraoui</prenom>
+  <experiences>
+    <experience>
+      <titre>Trainee</titre>
+      <entreprise>Tunisie Telecom</entreprise>
+      <dates>Aug 2022</dates>
+    </experience>
+  </experiences>
+  <competences>
+    Langages de programmation : Java, JavaScript, Dart
+  </competences>
+</cv>

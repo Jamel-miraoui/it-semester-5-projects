@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center">
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Prenom"/>
+            <EditText
+                android:id="@+id/prenom"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:width="180dp"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="nom"/>
+            <EditText
+                android:id="@+id/nom"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:width="180dp"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="classe"/>
+            <EditText
+                android:id="@+id/classe"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:width="180dp"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="group"/>
+            <EditText
+                android:id="@+id/group"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:width="180dp"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="matricule"/>
+            <EditText
+                android:id="@+id/matricuile"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" android:width="180dp"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+            <Button android:text="inscri" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <Button android:text="annuler" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>

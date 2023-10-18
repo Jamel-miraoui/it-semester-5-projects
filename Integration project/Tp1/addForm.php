@@ -14,7 +14,7 @@
         <label for="NumRatV">NumRatV :</label>
         <input type="number" name="NumRatV" id="NumRatV" /> <br>
         <label for="MatProf">MatProf :</label>
-        <input type="text" name="MatProf" id="MatProf" required /> <br>
+        <input type="number" name="MatProf" id="MatProf" required /> <br>
         <label for="DateRat">DateRat :</label>
         <input type="datetime-local" name="DateRat" id="DateRat" required /> <br>
         <label for="Seance">Seance :</label>

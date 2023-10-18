@@ -18,28 +18,28 @@ function saisieControl($NumRatV,$MatProf, $DateRat, $Session, $Seance, $Salle, $
   $id = $NumRatV ; 
   $errors = array();
   if (!is_numeric($MatProf) || $MatProf > 32767 || $MatProf < -32767) {
-    $errors[] = "MatProf is not within the valid range. You need to enter a number between -32767 and 32767.";
+    $errors[] = "MatProf :You need to enter a number between -32767 and 32767";
   }
   if (!strtotime($DateRat)) {
-    $errors[] = "DateRat is not in a valid datetime format (YYYY-MM-DD HH:MM:SS).";
+    $errors[] = "DateRat is not valid format";
   }
   if (!is_numeric($Session) || $Session <= 0) {
-    $errors[] = "Session should be a positive integer.";
+    $errors[] = "Session need to be a positive integer.";
   }
   if (strlen($Seance) > 10) {
-    $errors[] = "Seance should not exceed 10 characters.";
+    $errors[] = "Seance should < 10 characters.";
   }
   if (strlen($Salle) > 10) {
-    $errors[] = "Salle should not exceed 10 characters.";
+    $errors[] = "Salle should < 10 characters.";
   }
   if (strlen($Jour) > 10) {
-    $errors[] = "Jour should not exceed 10 characters.";
+    $errors[] = "Jour should < 10 characters.";
   }
   if (strlen($CodeClasse) > 9) {
-    $errors[] = "CodeClasse should not exceed 9 characters.";
+    $errors[] = "CodeClasse should < 9 characters.";
   }
   if (strlen($CodeMatiere) > 10) {
-    $errors[] = "CodeMatiere should not exceed 10 characters.";
+    $errors[] = "CodeMatiere should < 10 characters.";
   }
   if (!empty($errors)) {
     $errorMessages = implode(',', $errors);

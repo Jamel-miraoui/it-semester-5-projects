@@ -35,7 +35,7 @@ if ($statut == "succes") {
         <label for="NumRatV">NumRatV : <?php echo $row['NumRatV']; ?></label>
         <input type="number" name="NumRatV" id="NumRatV" value="<?php echo $row['NumRatV']; ?>" hidden/> <br>
         <label for="MatProf">MatProf : </label>
-        <input type="text" name="MatProf" id="MatProf" value="<?php echo $row['MatProf']; ?>" required /> <br>
+        <input type="number" name="MatProf" id="MatProf" value="<?php echo $row['MatProf']; ?>" required /> <br>
         <label for="DateRat">DateRat :</label>
         <input type="datetime-local" name="DateRat" id="DateRat" value="<?php echo $row['DateRat'];  ?>" required /> <br>
         <label for="Seance">Seance :</label>

@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .error{
+            color: red;
+        }
+    </style>
 </head>
-
 <body>
     <form action="add.php" method="post">
         <label for="NumRatV">NumRatV :</label>
@@ -27,10 +31,18 @@
         <label for="CodeMatiere">Code Matiere :</label>
         <input type="text" name="CodeMatiere" id="CodeMatiere" /> <br>
         <label>Etat:</label>
-        <input type="radio" name="Etat" value="0" required> 0 <br>
-        <input type="radio" name="Etat" value="1"> 1
+        <input type="radio" name="Etat" value="0" required> 0 
+        <input type="radio" name="Etat" value="1"> 1<br>
         <input type="submit" value="Add" />
     </form>
+    <?php
+    if (isset($_GET['errors'])) {
+        $errorMessages = explode(',', urldecode($_GET['errors']));
+        foreach ($errorMessages as $errorMessage) {
+            echo '<p class="error">' . $errorMessage . '</p>';
+        }
+    }
+    ?>
 </body>
 
 </html>

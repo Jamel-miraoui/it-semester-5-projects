@@ -22,6 +22,11 @@ if ($statut == "succes") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .error{
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <form action="edit.php" method="post">
@@ -48,5 +53,13 @@ if ($statut == "succes") {
         <input type="radio" name="Etat" value="1" <?php echo $row['Etat'] == '1' ? 'checked' : ''; ?>> 1
         <input type="submit" value="Edit" />
     </form>
+    <?php
+    if (isset($_GET['errors'])) {
+        $errorMessages = explode(',', urldecode($_GET['errors']));
+        foreach ($errorMessages as $errorMessage) {
+            echo '<p class="error">' . $errorMessage . '</p>';
+        }
+    }
+    ?>
 </body>
 </html>

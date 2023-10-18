@@ -12,37 +12,10 @@ if ($statut == "succes" && $_SERVER["REQUEST_METHOD"] == "POST") {
     $CodeClasse = $_POST["CodeClasse"];
     $CodeMatiere = $_POST["CodeMatiere"];
     $Etat = $_POST["Etat"];
+    $header = "editForm";
 
-    if (!is_numeric($MatProf) || $MatProf > 32767 || $MatProf < -32767) {
-        $errors[] = "MatProf is not within the valid range. You need to enter a number between -32767 and 32767.";
-    }
-    if (!strtotime($DateRat)) {
-        $errors[] = "DateRat is not in a valid datetime format (YYYY-MM-DD HH:MM:SS).";
-    }
-    if (!is_numeric($Session) || $Session <= 0) {
-        $errors[] = "Session should be a positive integer.";
-    }
-    if (strlen($Seance) > 10) {
-        $errors[] = "Seance should not exceed 10 characters.";
-    }
-    if (strlen($Salle) > 10) {
-        $errors[] = "Salle should not exceed 10 characters.";
-    }
-    if (strlen($Jour) > 10) {
-        $errors[] = "Jour should not exceed 10 characters.";
-    }
-    if (strlen($CodeClasse) > 9) {
-        $errors[] = "CodeClasse should not exceed 9 characters.";
-    }
-    if (strlen($CodeMatiere) > 10) {
-        $errors[] = "CodeMatiere should not exceed 10 characters.";
-    }
-
-    if (!empty($errors)) {
-        $errorMessages = implode(',', $errors);
-        header("Location: editForm.php?errors=" . urlencode($errorMessages));
-        exit;
-    }
+    saisieControl($NumRatV,$MatProf,$DateRat,$Seance,$Session,$Salle,$Jour,$CodeClasse,$CodeMatiere,$header);
+    
     $updateQuery = "UPDATE RatVol SET
         MatProf = '$MatProf' , 
         Seance = '$Seance',

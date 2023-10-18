@@ -1,5 +1,4 @@
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +20,7 @@
         <label for="Seance">Seance :</label>
         <input type="text" name="Seance" id="Seance" required /> <br>
         <label for="Session">Session :</label>
-        <input type="text" name="Session" id="Session" required /> <br>
+        <input type="number" name="Session" id="Session" required /> <br>
         <label for="Salle">Salle :</label>
         <input type="text" name="Salle" id="Salle" required /> <br>
         <label for="Jour">Jour :</label>
@@ -44,5 +43,4 @@
     }
     ?>
 </body>
-
 </html>

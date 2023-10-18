@@ -10,5 +10,4 @@ if ($mysqli -> connect_errno) {
   $statut =  "Failed to connect to MySQL: " . $mysqli -> connect_error;
   exit();
 } else {$statut = "succes" ; }
-
 ?>

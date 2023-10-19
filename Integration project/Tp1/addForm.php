@@ -10,6 +10,7 @@
         }
     </style>
 </head>
+<br><br><br><br>
 <body class="add-page">
     <form action="add.php" method="post">
         <label for="NumRatV">NumRatV :</label>

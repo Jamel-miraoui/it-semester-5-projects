@@ -34,6 +34,6 @@ if ($statut == "succes" && $_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error updating record: " . $mysqli->error;
     }
 } else {
-    echo "Invalid request method or status.";
+    echo $statut;
 }
 ?>

@@ -13,8 +13,9 @@ if ($mysqli->connect_errno) {
   $statut = "succes";
 }
 
-function saisieControl($NumRatV,$MatProf, $DateRat, $Session, $Seance, $Salle, $Jour, $CodeClasse, $CodeMatiere , $header){
-  $id = $NumRatV ; 
+function saisieControl($NumRatV, $MatProf, $DateRat, $Session, $Seance, $Salle, $Jour, $CodeClasse, $CodeMatiere, $header)
+{
+  $id = $NumRatV;
   $errors = array();
   if (!is_numeric($MatProf) || $MatProf > 32767 || $MatProf < -32767) {
     $errors[] = "MatProf :You need to enter a number between -32767 and 32767";
@@ -22,23 +23,23 @@ function saisieControl($NumRatV,$MatProf, $DateRat, $Session, $Seance, $Salle, $
   if (!strtotime($DateRat)) {
     $errors[] = "DateRat is not valid format";
   }
-  if (!is_numeric($Session) || $Session <= 0) {
-    $errors[] = "Session need to be a positive integer.";
+  if (!is_numeric($Session) || $Session <= 0 || $Session > 2147483647) {
+    $errors[] = "Session need to be a positive integer and less then 2147483647";
   }
   if (strlen($Seance) > 10) {
-    $errors[] = "Seance should < 10 characters.";
+    $errors[] = "Seance should < 10 characters";
   }
   if (strlen($Salle) > 10) {
-    $errors[] = "Salle should < 10 characters.";
+    $errors[] = "Salle should < 10 characters";
   }
   if (strlen($Jour) > 10) {
-    $errors[] = "Jour should < 10 characters.";
+    $errors[] = "Jour should < 10 characters";
   }
   if (strlen($CodeClasse) > 9) {
-    $errors[] = "CodeClasse should < 9 characters.";
+    $errors[] = "CodeClasse should < 9 characters";
   }
   if (strlen($CodeMatiere) > 10) {
-    $errors[] = "CodeMatiere should < 10 characters.";
+    $errors[] = "CodeMatiere should < 10 characters";
   }
   if (!empty($errors)) {
     $errorMessages = implode(',', $errors);
@@ -47,10 +48,9 @@ function saisieControl($NumRatV,$MatProf, $DateRat, $Session, $Seance, $Salle, $
   }
 }
 
-function returnParam($errorMessages,$NumRatV,$MatProf, $DateRat,$Seance, $Session,  $Salle, $Jour, $CodeClasse, $CodeMatiere,$Etat, $header){
-  header("Location: $header.php?errors=" . urlencode($errorMessages) . "&NumRatV=" . urlencode($NumRatV). "&MatProf=" . urlencode($MatProf). "&DateRat=" 
-  . urlencode($DateRat). "&Seance=" . urlencode($Seance). "&Session=" . urlencode($Session). "&Salle=" . urlencode($Salle). "&Jour=" . urlencode($Jour)
-  . "&CodeClasse=" . urlencode($CodeClasse). "&CodeMatiere=" . urlencode($CodeMatiere) . "&Etat=" . urlencode($Etat));
+function returnParam($errorMessages, $NumRatV, $MatProf, $DateRat, $Seance, $Session,  $Salle, $Jour, $CodeClasse, $CodeMatiere, $Etat, $header)
+{
+  header("Location: $header.php?errors=" . urlencode($errorMessages) . "&NumRatV=" . urlencode($NumRatV) . "&MatProf=" . urlencode($MatProf) . "&DateRat="
+    . urlencode($DateRat) . "&Seance=" . urlencode($Seance) . "&Session=" . urlencode($Session) . "&Salle=" . urlencode($Salle) . "&Jour=" . urlencode($Jour)
+    . "&CodeClasse=" . urlencode($CodeClasse) . "&CodeMatiere=" . urlencode($CodeMatiere) . "&Etat=" . urlencode($Etat));
 }
-
-?>

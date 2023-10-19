@@ -19,10 +19,16 @@ if ($statut == "succes" && $_SERVER["REQUEST_METHOD"] == "POST") {
     $checkResult = $mysqli->query($checkquery);
     if ($checkResult->num_rows > 0) {
             $errors = array();
-            $errors[] = "NumRatV:$NumRatV used.";
+            $errors[] = "NumRatV: $NumRatV used.";  
             $errorMessages = implode(',', $errors);
             returnParam($errorMessages,$NumRatV,$MatProf,$DateRat,$Seance,$Session,$Salle,$Jour,$CodeClasse,$CodeMatiere,$Etat,$header);
             exit;
+        } else {
+            if ($NumRatV > 2147483647 || $NumRatV < -2147483647){
+            $errors[] = "NumRatV need to be less then 2147483648"; 
+            $errorMessages = implode(',', $errors);
+            returnParam($errorMessages,$NumRatV,$MatProf,$DateRat,$Seance,$Session,$Salle,$Jour,$CodeClasse,$CodeMatiere,$Etat,$header);
+            exit;}
         }
     
     saisieControl($NumRatV, $MatProf, $DateRat, $Seance, $Session, $Salle, $Jour, $CodeClasse, $CodeMatiere, $header);
@@ -35,6 +41,6 @@ if ($statut == "succes" && $_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error adding record: " . $mysqli->error;
     }
 } else {
-    echo "Invalid request method or status.";
+    echo $statut;
 }
 ?>

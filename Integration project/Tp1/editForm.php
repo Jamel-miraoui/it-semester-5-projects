@@ -30,7 +30,7 @@ if ($statut == "succes") {
         }
     </style>
 </head>
-
+<br><br><br>
 <body class="edit-page">
     <form action="edit.php" method="post">
         <label for="NumRatV" id="pm">NumRatV : <?php echo $row['NumRatV']; ?></label>

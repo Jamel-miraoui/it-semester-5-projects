@@ -1,0 +1,64 @@
+/* Add these styles to your 'index.css' file */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .index-page {
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  table {  
+    margin: 0 auto;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #3498db;
+    color: #fff;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .add-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+
+  }
+  
+  a {
+    text-decoration: none;
+    font-size: large;
+    color: #d8e5ee;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+
+  div{
+    margin:auto ; 
+  }
+
+  
+  

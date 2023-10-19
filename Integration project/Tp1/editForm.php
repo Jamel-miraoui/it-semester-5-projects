@@ -23,6 +23,7 @@ if ($statut == "succes") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="add.css">
     <style>
         .error {
             color: red;
@@ -30,9 +31,9 @@ if ($statut == "succes") {
     </style>
 </head>
 
-<body>
+<body class="edit-page">
     <form action="edit.php" method="post">
-        <label for="NumRatV">NumRatV : <?php echo $row['NumRatV']; ?></label>
+        <label for="NumRatV" id="pm">NumRatV : <?php echo $row['NumRatV']; ?></label>
         <input type="number" name="NumRatV" id="NumRatV" value="<?php echo $row['NumRatV']; ?>" hidden/> <br>
         <label for="MatProf">MatProf : </label>
         <input type="number" name="MatProf" id="MatProf" value="<?php echo $row['MatProf']; ?>" required /> <br>

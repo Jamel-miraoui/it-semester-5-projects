@@ -13,8 +13,7 @@ if ($mysqli->connect_errno) {
   $statut = "succes";
 }
 
-function saisieControl($NumRatV,$MatProf, $DateRat, $Session, $Seance, $Salle, $Jour, $CodeClasse, $CodeMatiere , $header)
-{
+function saisieControl($NumRatV,$MatProf, $DateRat, $Session, $Seance, $Salle, $Jour, $CodeClasse, $CodeMatiere , $header){
   $id = $NumRatV ; 
   $errors = array();
   if (!is_numeric($MatProf) || $MatProf > 32767 || $MatProf < -32767) {
@@ -46,6 +45,12 @@ function saisieControl($NumRatV,$MatProf, $DateRat, $Session, $Seance, $Salle, $
     header("Location: $header.php?errors=" . urlencode($errorMessages) . "&id=" . urlencode($id));
     exit;
   }
+}
+
+function returnParam($errorMessages,$NumRatV,$MatProf, $DateRat,$Seance, $Session,  $Salle, $Jour, $CodeClasse, $CodeMatiere,$Etat, $header){
+  header("Location: $header.php?errors=" . urlencode($errorMessages) . "&NumRatV=" . urlencode($NumRatV). "&MatProf=" . urlencode($MatProf). "&DateRat=" 
+  . urlencode($DateRat). "&Seance=" . urlencode($Seance). "&Session=" . urlencode($Session). "&Salle=" . urlencode($Salle). "&Jour=" . urlencode($Jour)
+  . "&CodeClasse=" . urlencode($CodeClasse). "&CodeMatiere=" . urlencode($CodeMatiere) . "&Etat=" . urlencode($Etat));
 }
 
 ?>

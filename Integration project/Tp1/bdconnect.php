@@ -24,7 +24,7 @@ function saisieControl($NumRatV, $MatProf, $DateRat, $Session, $Seance, $Salle, 
     $errors[] = "DateRat is not valid format";
   }
   if (!is_numeric($Session) || $Session <= 0 || $Session > 2147483647) {
-    $errors[] = "Session need to be a positive integer and less then 2147483647";
+    $errors[] = "Session need to be a positive int and less then 2147483647";
   }
   if (strlen($Seance) > 10) {
     $errors[] = "Seance should < 10 characters";

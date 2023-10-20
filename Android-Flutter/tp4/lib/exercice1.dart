@@ -4,38 +4,40 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('jamel miraoui'),
-        ),
-        body: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-
 class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
+  int xdd = 0;
+
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return MaterialApp(
+      home: Directionality(
+        textDirection: TextDirection.ltr, // or TextDirection.rtl if you need right-to-left.
+        child: Scaffold(
+          appBar: AppBar(title: Text("MiraouiJamel")),
+          body: Center(
+            child: Column(
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      xdd++;
+                    });
+                  },
+                  child: Text("click me"),
+                ),
+                Text("$xdd"),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

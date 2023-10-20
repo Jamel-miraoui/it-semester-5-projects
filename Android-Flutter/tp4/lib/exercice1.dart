@@ -13,7 +13,6 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int xdd = 0;
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,16 +22,24 @@ class _MyAppState extends State<MyApp> {
           appBar: AppBar(title: Text("MiraouiJamel")),
           body: Center(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      xdd++;
-                    });
-                  },
-                  child: Text("click me"),
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: SizedBox(
+                    width: 100,
+                    height: 50,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          xdd++;
+                        });
+                      },
+                      child: Text("click me"),
+                    ),
+                  ),
                 ),
-                Text("$xdd"),
+                Text("You clicked $xdd time"),
               ],
             ),
           ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 void main(){
   runApp(MyApp()); 
 }
@@ -18,10 +17,15 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         appBar: AppBar(title: Text("Duplicate Picture"),),
         body: Column(
-          
-        )
-        ,
+          children: [
+            ElevatedButton(onPressed: getIcones, child: Text("hello"))
+          ],
+        ),
       ),
     );
+  }
+  Icon getIcones(){
+    List<IconData> iconn = [Icons.ac_unit_rounded];
+    return Icon(iconn[0],color: Colors.blue,);
   }
 }

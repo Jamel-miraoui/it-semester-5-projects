@@ -74,7 +74,7 @@ class _MyAppState extends State<MyApp> {
               scrollDirection: Axis.horizontal,
               child:
             Row(
-              children: img,
+              children: ,
             ),)
           ],
         ),

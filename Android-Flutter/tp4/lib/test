@@ -11,3 +11,6 @@ Container(
 
 
   var image = '' ;
+
+
+                  Image.network('https://picsum.photos/$code',fit:BoxFit.cover),

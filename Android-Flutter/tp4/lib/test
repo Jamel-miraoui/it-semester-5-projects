@@ -1,0 +1,13 @@
+Container(
+              width: 100,
+              height: 100,
+              decoration: 
+              BoxDecoration(image: DecorationImage(image: AssetImage(image)))
+             )
+
+
+
+                image = 'lib/assets/image/a3051745-c759-4065-bea6-8f9d2fcd5b20-120_x_178.png' ; 
+
+
+  var image = '' ;

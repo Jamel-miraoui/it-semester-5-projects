@@ -27,13 +27,10 @@ if ($statut == "succes") {
         $filterR = 1;
       }
     }
-
     echo $filterR;
-
     foreach ($filter as $value) {
       echo $value . "<br>";
     }
-
     if ($filterR == 0) {
       $req = "SELECT * from RatVol";
       $result = $mysqli->query($req);

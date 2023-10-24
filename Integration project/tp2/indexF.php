@@ -18,8 +18,8 @@ if ($statut == "succes") {
     $filterR = 0;
     $filter = [];
     global $mysqli;
-    global $result, $MatProf, $DateRat, $Seance, $Session, $Salle, $Jour, $CodeClasse, $CodeMatiere, $NumRatV;
-    $table = [$NumRatV, $MatProf, $DateRat, $Seance, $Session, $Salle, $Jour, $CodeClasse, $CodeMatiere];
+    global $result, $MatProf, $DateRat, $Seance, $Session, $Salle, $Jour, $CodeClasse, $CodeMatiere,$Etat, $NumRatV;
+    $table = [$NumRatV, $MatProf, $DateRat, $Seance, $Session, $Salle, $Jour, $CodeClasse, $CodeMatiere,$Etat];
 
     for ($i = 0; $i < count($table); $i++) {
       if ($table[$i] !== "" && !is_null($table[$i])) {
@@ -53,7 +53,7 @@ if ($statut == "succes") {
         echo "</tr>";
       }
     }
-    
+
   }
 } else {
   echo $statut;

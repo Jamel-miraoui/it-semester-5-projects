@@ -126,7 +126,7 @@ form input[type="submit"] {
   border-radius: 5px;
   cursor: pointer;/* Push the button to the right */
 }
-form input[type="reset"] {
+#reset {
   height: 35px;
   width: 150px;
   margin: 5px;
@@ -138,5 +138,3 @@ form input[type="reset"] {
   cursor: pointer;
   margin-left: 200px; /* Push the button to the right */
 }
-
-

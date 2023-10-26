@@ -11,7 +11,6 @@ if ($statut == "succes") {
   $CodeMatiere = $_POST["filterCodeMatiere"];
   $Etat = $_POST["filterEtat"];
   $DateRat1 =  "'$DateRat'";
-
   function printResult()
   {
     $filterR = 0;
@@ -26,6 +25,7 @@ if ($statut == "succes") {
         $filterR = 1;
       }
     }
+
     $filterCount = count($filter);
     if ($filterR == 0) {
       $req = "SELECT * from RatVol";

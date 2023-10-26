@@ -10,19 +10,18 @@ if ($statut == "succes") {
   $CodeClasse = $_POST["filterCodeClasse"];
   $CodeMatiere = $_POST["filterCodeMatiere"];
   $Etat = $_POST["filterEtat"];
-  $header = "addForm";
-  $sqldate = "LIKE $DateRat ";
+  $DateRat1 =  "'$DateRat'";
 
   function printResult()
   {
     $filterR = 0;
     $filter = [];
     global $mysqli;
-    global $result, $MatProf, $DateRat, $Seance, $Session, $Salle, $Jour, $CodeClasse, $CodeMatiere, $Etat, $NumRatV;
-    $table = [$NumRatV, $MatProf, $DateRat, $Seance, $Session, $Salle, $Jour, $CodeClasse, $CodeMatiere, $Etat];
+    global $result, $MatProf, $DateRat1, $Seance, $Session, $Salle, $Jour, $CodeClasse, $CodeMatiere, $Etat, $NumRatV;
+    $table = [$NumRatV, $MatProf, $DateRat1, $Seance, $Session, $Salle, $Jour, $CodeClasse, $CodeMatiere, $Etat];
     $tableNames = ["NumRatV", "MatProf", "DATE(DateRat)", "Seance", "Session", "Salle", "Jour", "CodeClasse", "CodeMatiere", "Etat"];
     for ($i = 0; $i < count($table); $i++) {
-      if ($table[$i] !== "" && !is_null($table[$i])) {
+      if ($table[$i] !== "" && !is_null($table[$i]) && $table[$i] !== "''") {
         $filter[] = "$tableNames[$i]=$table[$i]";
         $filterR = 1;
       }
@@ -46,6 +45,7 @@ if ($statut == "succes") {
         $champs .=  "AND ";
       }
       $req = "SELECT * FROM RatVol WHERE $champs ;";
+      echo $req ;
     }
     $result = $mysqli->query($req);
     while ($row = $result->fetch_assoc()) {
@@ -64,6 +64,7 @@ if ($statut == "succes") {
       echo "</tr>";
     }
   }
+
 } else {
   echo $statut;
 }

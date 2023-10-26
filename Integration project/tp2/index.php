@@ -17,6 +17,7 @@ if ($statut == "succes") {
 </head>
 
 <body class="index-page">
+  <br> <br> 
   <form method="post" action="index.php">
   <label for="filterNumRatV">NumRatV:</label>
   <input type="text" name="filterNumRatV" id="filterNumRatV" value="<?php echo $NumRatV ?>">
@@ -48,6 +49,7 @@ if ($statut == "succes") {
   <label for="filterEtat">Etat:</label>
   <input type="text" name="filterEtat" id="filterEtat" value="<?php echo $Etat ?>">
 
+  <input type="reset">
   <input type="submit" value="Apply Change">
 </form>
 

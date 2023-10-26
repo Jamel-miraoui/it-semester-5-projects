@@ -11,7 +11,6 @@ if ($statut == "succes") {
   $CodeMatiere = $_POST["filterCodeMatiere"];
   $Etat = $_POST["filterEtat"];
   $header = "addForm";
-
   $sqldate = "LIKE $DateRat ";
 
   function printResult()
@@ -28,19 +27,14 @@ if ($statut == "succes") {
         $filterR = 1;
       }
     }
-    echo $filterR;
-    foreach ($filter as $value) {
-      echo $value . "<br>";
-    }
-
     $filterCount = count($filter);
-
-    if ($filterR == 1 && $filterCount == 1) {
+    if ($filterR == 0) {
+      $req = "SELECT * from RatVol";
+    } else if ($filterR == 1 && $filterCount == 1) {
       foreach ($filter as $champ) {
-        $reqf =  "SELECT * FROM RatVol WHERE $champ ;";
+        $req =  "SELECT * FROM RatVol WHERE $champ ;";
       }
-    }
-    if ($filterR == 1 && $filterCount > 1) {
+    } else {
       $i = 0;
       $champs = "";
       foreach ($filter as $champ) {
@@ -51,17 +45,7 @@ if ($statut == "succes") {
         }
         $champs .=  "AND ";
       }
-    }
-
-    $reqf = "SELECT * FROM RatVol WHERE $champs ;";
-    echo $reqf;
-
-    if ($filterR == 0) {
-      $req = "SELECT * from RatVol";
-    } else if ($filterR == 1 && $filterCount == 1) {
-      $req =  "SELECT * FROM RatVol WHERE $champ ;";
-    } else {
-      $req = $reqf;
+      $req = "SELECT * FROM RatVol WHERE $champs ;";
     }
     $result = $mysqli->query($req);
     while ($row = $result->fetch_assoc()) {

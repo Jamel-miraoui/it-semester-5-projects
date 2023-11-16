@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Montant :"
+            android:textSize="20dp" />
+        <EditText
+            android:id="@+id/montant"
+            android:width="150dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"></EditText>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/r1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dinners vers Euro"
+            android:textAlignment="textEnd">
+        </RadioButton>
+        <RadioButton
+            android:id="@+id/r2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dinners vers usd"
+            android:textAlignment="textEnd"></RadioButton>
+        <RadioButton
+            android:id="@+id/r3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Euro vers Dinners"
+            android:textAlignment="textEnd"></RadioButton>
+        <RadioButton
+            android:id="@+id/r4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="USD vers Dinners"
+            android:textAlignment="textEnd"></RadioButton>
+    </RadioGroup>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textColor="@android:color/holo_green_dark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="Result  : "></TextView>
+        <TextView
+            android:textColor="@android:color/holo_green_dark"
+            android:id="@+id/result"
+            android:layout_width="wrap_content"
+            android:textSize="20dp"
+            android:layout_height="wrap_content">
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+        <Button
+            android:id="@+id/bt1"
+            android:text="Convertir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></Button>
+        <Button
+            android:id="@+id/bt2"
+            android:text="Reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></Button>
+    </LinearLayout>
+
+</LinearLayout>

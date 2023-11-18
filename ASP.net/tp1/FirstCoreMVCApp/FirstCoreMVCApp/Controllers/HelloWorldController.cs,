@@ -1,0 +1,20 @@
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace FirstCoreMVCApp.Controllers
+{
+    public class HelloWorldController : Controller
+    {
+ 
+        //Get: //HelloWorld/Welcome
+        public string Index()
+        {
+            return "this is my default action";
+        }
+
+        //Get: //HelloWorld/Welcome
+        public string Welcome()
+        {
+            return "this is the welcome action methode";
+        }
+    }
+}

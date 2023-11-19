@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.widget.Toast;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent;
                 intent = new Intent(MainActivity.this,MainActivity1.class);
-                startActivity(intent);
+                startActivityForResult(intent,1);
             }
         });
         b2.setOnClickListener(new View.OnClickListener() {
@@ -30,9 +31,34 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent;
                 intent = new Intent(MainActivity.this,MainActivity2.class);
-                startActivity(intent);
+                startActivityForResult(intent,2);
             }
         });
+    }
+
+    public void onActivityResult(int requestCode,int resultCode, intent data){
+        switch (requestCode){
+            case (1): switch (resultCode){
+                case RESULT_OK:
+                    Toast.makeText(this,"Enfant1 OK", Toast.LENGTH_SHORT).show();
+                    return;
+                case RESULT_CANCELED:
+                    Toast.makeText(this,"Enfant1 Annuler",Toast.LENGTH_SHORT).show();
+                    return;
+            }
+            case (2): switch (resultCode){
+                case RESULT_OK:
+                    Toast.makeText(this,"Enfant2 OK", Toast.LENGTH_SHORT).show();
+
+                    return;
+                case RESULT_CANCELED:
+                    Toast.makeText(this,"Enfant2 Annuler", Toast.LENGTH_SHORT).show();
+
+                    return;
+
+            }
+
+        }// switch
     }
 
 }

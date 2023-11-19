@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout);
-
         Button b1 = (Button)findViewById(R.id.b1) ;
         Button b2 = (Button)findViewById(R.id.b2) ;
 
@@ -36,27 +35,28 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void onActivityResult(int requestCode,int resultCode, intent data){
-        switch (requestCode){
-            case (1): switch (resultCode){
-                case RESULT_OK:
-                    Toast.makeText(this,"Enfant1 OK", Toast.LENGTH_SHORT).show();
-                    return;
-                case RESULT_CANCELED:
-                    Toast.makeText(this,"Enfant1 Annuler",Toast.LENGTH_SHORT).show();
-                    return;
-            }
-            case (2): switch (resultCode){
-                case RESULT_OK:
-                    Toast.makeText(this,"Enfant2 OK", Toast.LENGTH_SHORT).show();
-
-                    return;
-                case RESULT_CANCELED:
-                    Toast.makeText(this,"Enfant2 Annuler", Toast.LENGTH_SHORT).show();
-
-                    return;
-
-            }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode,Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case (1):
+                switch (resultCode) {
+                    case RESULT_OK:
+                        Toast.makeText(this, "Enfant1 OK", Toast.LENGTH_SHORT).show();
+                        return;
+                    case RESULT_CANCELED:
+                        Toast.makeText(this, "Enfant1 Annuler", Toast.LENGTH_SHORT).show();
+                        return;
+                }
+            case (2):
+                switch (resultCode) {
+                    case RESULT_OK:
+                        Toast.makeText(this, "Enfant2 OK", Toast.LENGTH_SHORT).show();
+                        return;
+                    case RESULT_CANCELED:
+                        Toast.makeText(this, "Enfant2 Annuler", Toast.LENGTH_SHORT).show();
+                        return;
+                }
 
         }// switch
     }

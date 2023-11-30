@@ -46,7 +46,6 @@ public class Gestion extends AppCompatActivity {
                     case RESULT_OK:
                         Toast.makeText(this, "Inscription Done", Toast.LENGTH_SHORT).show();
                 }
-
         }// switch
     }
 }

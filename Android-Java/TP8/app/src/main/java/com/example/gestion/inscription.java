@@ -19,7 +19,6 @@ public class inscription extends AppCompatActivity {
         EditText classe = (EditText)findViewById(R.id.classe);
         EditText login = (EditText)findViewById(R.id.login);
         EditText password = (EditText)findViewById(R.id.password);
-
         Button btnInscri = (Button)findViewById(R.id.inscription) ;
         Button btnAnnuler = (Button)findViewById(R.id.annuler) ;
 

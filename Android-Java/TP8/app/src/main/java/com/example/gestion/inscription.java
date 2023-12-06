@@ -2,6 +2,7 @@ package com.example.gestion;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -34,15 +35,18 @@ public class inscription extends AppCompatActivity {
             boolean stat = true ;
             @Override
             public void onClick(View v) {
+                Etudiants etudiant = new Etudiants(prenom.getText().toString(),nom.getText().toString(),classe.getText().toString(),login.getText().toString(),password.getText().toString());
                 try {
                     EtudiantDBHandler db  = new EtudiantDBHandler(inscription.this) ;
-                    db.insertEtudiant(new Etudiants(prenom.getText().toString(),nom.getText().toString(),classe.getText().toString(),login.getText().toString(),password.getText().toString()));
+                    db.insertEtudiant(etudiant);
                 }
                 catch (Exception e ) {
                     stat = false ;
                 }
                 if (stat) {
-                    setResult(RESULT_OK);
+                    Intent returnIntent = new Intent();
+                    returnIntent.putExtra("result", etudiant.getNom() + " " + etudiant.getPrenom());
+                    setResult(RESULT_OK,returnIntent);
                     finish();
                 }
             }

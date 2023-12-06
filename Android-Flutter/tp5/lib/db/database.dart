@@ -15,10 +15,7 @@ class DataBaseHelper {
     String databasePath = await getDatabasesPath();
     String path = join(databasePath, 'gestionemploye.db');
     
-    return await openDatabase(
-      path,
-      version: 1,
-      onCreate: _onCreate,
+    return await openDatabase(path,version: 1,onCreate: _onCreate,
       //onUpgrade:_onupgrade,
       //onDowngrade:
     );

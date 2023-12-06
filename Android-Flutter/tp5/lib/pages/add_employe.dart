@@ -4,7 +4,6 @@ import 'package:tp5/model/employe.dart';
 import 'package:tp5/widgets/custom_button.dart';
 import 'package:tp5/widgets/custom_text.dart';
 
-
 class AddEmploye extends StatefulWidget {
   const AddEmploye({super.key});
 

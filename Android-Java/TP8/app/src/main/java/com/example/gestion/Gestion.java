@@ -17,7 +17,8 @@ public class Gestion extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gestion);
-        Button btn = (Button)findViewById(R.id.btn) ;
+        Button btn = (Button)findViewById(R.id.btn1) ;
+        Button btn2 = (Button)findViewById(R.id.btn2) ;
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -26,6 +27,15 @@ public class Gestion extends AppCompatActivity {
                 startActivityForResult(intent,1);
             }
         });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent;
+                intent = new Intent(Gestion.this,MainActivity2.class);
+                startActivityForResult(intent,2);
+            }
+        });
+
     }
 
     public void onActivityResult(int requestCode, int resultCode,Intent data) {
@@ -35,16 +45,15 @@ public class Gestion extends AppCompatActivity {
                 switch (resultCode) {
                     case RESULT_CANCELED:
                         Toast.makeText(this, "Inscription anuller", Toast.LENGTH_SHORT).show();
-                        EtudiantDBHandler etudiant = new EtudiantDBHandler(Gestion.this) ;
-                        ArrayList<Etudiants> var =  etudiant.getAllEtudiants() ;
-                        ArrayList<String> str= new ArrayList<>()  ;
-                        for (Etudiants etd : var) {
-                            str.add(etd.getNom());
-                        }
-                        Toast.makeText(this, "names : " +str.toString(), Toast.LENGTH_SHORT).show();
                         return;
                     case RESULT_OK:
-                        Toast.makeText(this, "Inscription Done", Toast.LENGTH_SHORT).show();
+                        String result=data.getStringExtra("result");
+                        Toast.makeText(this, "Inscription de" + result  + "Done", Toast.LENGTH_SHORT).show();
+                }
+            case (2):
+                switch (resultCode){
+                    case RESULT_OK:
+                        Toast.makeText(this, "cansulter anuller", Toast.LENGTH_SHORT).show();
                 }
         }// switch
     }

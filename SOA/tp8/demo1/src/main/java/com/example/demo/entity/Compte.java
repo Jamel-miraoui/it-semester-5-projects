@@ -1,6 +1,6 @@
 package com.example.demo.entity;
 
-import com.example.demo.entity.TypeCompte;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

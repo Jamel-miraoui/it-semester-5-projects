@@ -77,10 +77,8 @@ class _AddEmployeeAT6State extends State<AddEmployeeAT6> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: CustomButton(text: "valider",onpressed:()  {
-       
        { if(formkey.currentState!.validate())
            {formkey.currentState!.save();
-            
            print(employee);
             database.add(employee);
          

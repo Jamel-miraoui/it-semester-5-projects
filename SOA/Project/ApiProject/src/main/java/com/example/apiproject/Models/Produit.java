@@ -1,18 +1,18 @@
 package com.example.apiproject.Models;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
-import org.springframework.data.annotation.*;
 
 
 
+@Entity
 public class Produit {
-
-    private User user ;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int reference ;
+    private int reference;
     @NotBlank
     private String name;
     @NotBlank
@@ -21,20 +21,12 @@ public class Produit {
     private String ImagePath ;
 
     public Produit(User user,int reference, String name, int prix, String imagePath) {
-        this.user = user ;
         this.reference = reference;
         this.name = name;
         this.prix = prix;
         ImagePath = imagePath;
     }
     public Produit() {
-    }
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
     public int getReference() {

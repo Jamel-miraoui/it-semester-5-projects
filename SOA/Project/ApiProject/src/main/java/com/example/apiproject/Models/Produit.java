@@ -1,18 +1,40 @@
 package com.example.apiproject.Models;
 
-public class produit {
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.validation.constraints.NotBlank;
+import org.springframework.data.annotation.*;
+
+
+
+public class Produit {
+
+    private User user ;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int reference ;
-    private String name ;
+    @NotBlank
+    private String name;
+    @NotBlank
     private int prix ;
+    @NotBlank
     private String ImagePath ;
 
-    public produit(int reference, String name, int prix, String imagePath) {
+    public Produit(User user,int reference, String name, int prix, String imagePath) {
+        this.user = user ;
         this.reference = reference;
         this.name = name;
         this.prix = prix;
         ImagePath = imagePath;
     }
-    public produit() {
+    public Produit() {
+    }
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public int getReference() {

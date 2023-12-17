@@ -4,6 +4,7 @@ import com.example.apiproject.Models.Produit;
 import com.example.apiproject.Repository.ProduitRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.util.List;
 
 @Service
 public class ProduitService {
@@ -11,12 +12,10 @@ public class ProduitService {
     private ProduitRepository produitRepository;
 
     public Produit addProduit(Produit produit) {
-        // Implement logic to add a produit to the database
         return produitRepository.save(produit);
     }
 
     public Produit updateProduit(int reference, Produit updatedProduit) {
-        // Implement logic to update a produit in the database
         Produit existingProduit = produitRepository.findById(reference)
                 .orElseThrow(() -> new RuntimeException("Produit not found with reference: " + reference));
 
@@ -28,7 +27,14 @@ public class ProduitService {
     }
 
     public void deleteProduit(int reference) {
-        // Implement logic to delete a produit from the database
         produitRepository.deleteById(reference);
+    }
+
+    public List<Produit> getAllProduits() {
+        return produitRepository.findAll();
+    }
+
+    public Produit getProduitById(int id) {
+        return produitRepository.getReferenceById(id) ;
     }
 }

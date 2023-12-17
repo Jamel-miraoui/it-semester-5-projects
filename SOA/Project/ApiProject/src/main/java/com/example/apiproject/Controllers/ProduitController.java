@@ -5,12 +5,24 @@ import com.example.apiproject.Service.ProduitService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/produits")
 public class ProduitController {
     @Autowired
     private ProduitService produitService;
+
+    @GetMapping
+    public ResponseEntity<List<Produit>> getAllProduits() {
+        List<Produit> produits = produitService.getAllProduits();
+        return ResponseEntity.ok(produits);
+    }
+    @GetMapping("/{reference}")
+    public ResponseEntity<Produit> getProduitById(@PathVariable int reference) {
+        Produit produits = produitService.getProduitById(reference);
+        return ResponseEntity.ok(produits);
+    }
 
     @PostMapping
     public ResponseEntity<Produit> addProduit(@RequestBody Produit produit) {
@@ -23,6 +35,7 @@ public class ProduitController {
         Produit updated = produitService.updateProduit(reference, updatedProduit);
         return ResponseEntity.ok(updated);
     }
+
     @DeleteMapping("/{reference}")
     public ResponseEntity<String> deleteProduit(@PathVariable int reference) {
         produitService.deleteProduit(reference);

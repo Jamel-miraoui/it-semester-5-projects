@@ -41,4 +41,10 @@ public class ProduitController {
         produitService.deleteProduit(reference);
         return ResponseEntity.ok("Produit with reference " + reference + " deleted successfully.");
     }
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<List<Produit>> getProduitsByUserId(@PathVariable int userId) {
+        List<Produit> produitsByUserId = produitService.getProduitsByUserId(userId);
+        return ResponseEntity.ok(produitsByUserId);
+    }
+
 }

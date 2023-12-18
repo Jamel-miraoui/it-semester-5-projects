@@ -33,6 +33,9 @@ public class ProduitService {
     public List<Produit> getAllProduits() {
         return produitRepository.findAll();
     }
+    public List<Produit> getProduitsByUserId(int userId) {
+        return produitRepository.findByUserUserId(userId);
+    }
 
     public Produit getProduitById(int id) {
         return produitRepository.getReferenceById(id) ;

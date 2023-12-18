@@ -14,17 +14,17 @@ public class User {
     private int userId ;
     @NotBlank
     private String fullName ;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Produit> produits;
+    @NotBlank
+    private String password ;
 
-    public User(int userId, String fullName, List<Produit> produits) {
+
+    public User(int userId, String fullName,String password) {
         this.userId = userId;
         this.fullName = fullName;
-        this.produits = produits;
+        this.password = password;
     }
 
     public User() {
-
     }
 
     public int getUserId() {
@@ -43,11 +43,11 @@ public class User {
         this.fullName = fullName;
     }
 
-    public List<Produit> getProduits() {
-        return produits;
+    public String getPassword() {
+        return password;
     }
 
-    public void setProduits(List<Produit> produits) {
-        this.produits = produits;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

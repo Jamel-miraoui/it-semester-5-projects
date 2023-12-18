@@ -10,35 +10,36 @@ import java.util.List;
 @RequestMapping("/api/users")
 public class UserController {
     @Autowired
-    private UserService userService ;
+    private UserService userService;
 
     @GetMapping
-    public ResponseEntity<List<User>> getAllUser(){
+    public ResponseEntity<List<User>> getAllUser() {
         List<User> users = userService.getAllUser();
-        return ResponseEntity.ok(users) ;
+        return ResponseEntity.ok(users);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<User> getUSerById(@PathVariable int id){
+    public ResponseEntity<User> getUserById(@PathVariable int id) {
         User user = userService.getUserById(id);
         return ResponseEntity.ok(user);
     }
 
     @PostMapping
-    public ResponseEntity<User> addUser(@RequestBody User user ){
-        User addeduser = userService.addUser(user);
-        return ResponseEntity.ok(addeduser);
+    public ResponseEntity<User> addUser(@RequestBody User user) {
+        User addedUser = userService.addUser(user);
+        return ResponseEntity.ok(addedUser);
     }
 
-    @DeleteMapping
-    public ResponseEntity<String> addUser(@PathVariable int id ){
+    @DeleteMapping("/{id}")  // Corrected path variable name
+    public ResponseEntity<String> deleteUser(@PathVariable int id) {
         userService.deleteUSer(id);
-        return ResponseEntity.ok("User "+id+" :Delete With succes ");
+        return ResponseEntity.ok("User " + id + ": Delete With success");
     }
 
-    @PutMapping
-    public ResponseEntity<User> addUser(@PathVariable int id,@RequestBody User user ){
-        User updateUSer = userService.updateUser(id,user);
-        return ResponseEntity.ok(updateUSer);
+    @PutMapping("/{id}")  // Corrected path variable name
+    public ResponseEntity<User> updateUser(@PathVariable int id, @RequestBody User user) {
+        User updatedUser = userService.updateUser(id, user);
+        return ResponseEntity.ok(updatedUser);
     }
 }
+

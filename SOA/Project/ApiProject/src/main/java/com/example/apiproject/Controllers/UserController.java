@@ -3,9 +3,12 @@ package com.example.apiproject.Controllers;
 import com.example.apiproject.Models.User;
 import com.example.apiproject.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.Map;
+
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
@@ -30,6 +33,8 @@ public class UserController {
         return ResponseEntity.ok(addedUser);
     }
 
+
+
     @DeleteMapping("/{id}")  // Corrected path variable name
     public ResponseEntity<String> deleteUser(@PathVariable int id) {
         userService.deleteUSer(id);
@@ -41,5 +46,29 @@ public class UserController {
         User updatedUser = userService.updateUser(id, user);
         return ResponseEntity.ok(updatedUser);
     }
+
+    @PostMapping("/checkPassword")
+    public ResponseEntity<Object> checkPassword(@RequestBody Map<String, String> requestBody) {
+        String fullName = requestBody.get("fullName");
+        String password = requestBody.get("password");
+
+        try {
+            User user = userService.getUserByName(fullName);
+
+            if (user != null && user.getPassword() != null && user.getPassword().equals(password)) {
+                // Return the user's ID if the password is correct
+                return ResponseEntity.ok(user.getUserId());
+            } else {
+                // Return false if the password is incorrect or the user is not found
+                return ResponseEntity.ok(false);
+            }
+        } catch (Exception e) {
+            return ResponseEntity.ok(false);
+        }
+    }
+
+
+
+
 }
 

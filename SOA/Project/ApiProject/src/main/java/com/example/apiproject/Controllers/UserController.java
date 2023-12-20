@@ -3,7 +3,6 @@ package com.example.apiproject.Controllers;
 import com.example.apiproject.Models.User;
 import com.example.apiproject.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -35,13 +34,13 @@ public class UserController {
 
 
 
-    @DeleteMapping("/{id}")  // Corrected path variable name
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteUser(@PathVariable int id) {
         userService.deleteUSer(id);
         return ResponseEntity.ok("User " + id + ": Delete With success");
     }
 
-    @PutMapping("/{id}")  // Corrected path variable name
+    @PutMapping("/{id}")
     public ResponseEntity<User> updateUser(@PathVariable int id, @RequestBody User user) {
         User updatedUser = userService.updateUser(id, user);
         return ResponseEntity.ok(updatedUser);
@@ -56,10 +55,8 @@ public class UserController {
             User user = userService.getUserByName(fullName);
 
             if (user != null && user.getPassword() != null && user.getPassword().equals(password)) {
-                // Return the user's ID if the password is correct
                 return ResponseEntity.ok(user.getUserId());
             } else {
-                // Return false if the password is incorrect or the user is not found
                 return ResponseEntity.ok(false);
             }
         } catch (Exception e) {

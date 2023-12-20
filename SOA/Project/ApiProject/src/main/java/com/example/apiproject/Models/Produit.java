@@ -1,11 +1,8 @@
 package com.example.apiproject.Models;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-
-
 
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer"})
@@ -19,8 +16,8 @@ public class Produit {
     private int prix ;
     @NotBlank
     private String ImagePath ;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = true)
     private User user;
 
     public Produit(int reference, String name, int prix, String imagePath, User user) {

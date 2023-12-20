@@ -1,33 +1,33 @@
-body{
+body {
 	margin: 0;
 	padding: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
-	background-image: url("wallhaven-2eqpzm.png");  /* fallback for old browsers */
-	/* background: -webkit-linear-gradient(to right, #0b8793, #360033);
-	background: linear-gradient(to right, #0b8793, #360033);  */
-	background-size: 100%;
+	background-image: url("wallhaven-2eqpzm.png");
+	background-size: cover;
 	background-repeat: no-repeat;
-	max-width: 100%;
-}
-.main{
+  }
+  
+  .main {
 	width: 500px;
 	height: 600px;
 	background: red;
 	overflow: hidden;
-	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
+	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/cover;
 	border-radius: 10px;
 	box-shadow: 0px 0px 90px #000;
-}
-#chk{
+  }
+  
+  #chk {
 	display: none;
-}
-.role{
+  }
+  
+  .role {
 	margin: auto;
-  padding: 10px;
-  background: #e0dede;
+	padding: 10px;
+	background: #e0dede;
 	justify-content: center;
 	display: flex;
 	margin: 20px auto;
@@ -37,24 +37,27 @@ body{
 	border-radius: 5px;
 	width: 80%;
 	height: 50px;
-}
-.notif {
+  }
+  
+  .notif {
 	color: white;
 	justify-content: center;
-	text-align: center
-}
-.notif1 {
+	text-align: center;
+  }
+  
+  .notif1 {
 	color: #146ea1;
 	justify-content: center;
-	text-align: center
-}
-.signup{
+	text-align: center;
+  }
+  
+  .signup {
 	position: relative;
-	width:100%;
+	width: 100%;
 	height: 100%;
-	
-}
-label{
+  }
+  
+  label {
 	color: #fff;
 	font-size: 2.3em;
 	justify-content: center;
@@ -62,9 +65,11 @@ label{
 	margin: 60px;
 	font-weight: bold;
 	cursor: pointer;
-	transition: .5s ease-in-out;
-}
-input{
+	transition: 0.5s ease-in-out;
+	text-align: center; /* Center text horizontally */
+  }
+  
+  input {
 	width: 80%;
 	height: 50px;
 	background: #e0dede;
@@ -75,8 +80,9 @@ input{
 	border: none;
 	outline: none;
 	border-radius: 5px;
-}
-button{
+  }
+  
+  button {
 	width: 60%;
 	height: 40px;
 	margin: 10px auto;
@@ -90,30 +96,41 @@ button{
 	outline: none;
 	border: none;
 	border-radius: 5px;
-	transition: .2s ease-in;
+	transition: 0.2s ease-in;
 	cursor: pointer;
-}
-button:hover{
+  }
+  
+  button:hover {
 	background: #309cda;
-}
-.login{
+  }
+  
+  .login {
 	height: 530px;
 	background: #eee;
 	border-radius: 60% / 10%;
 	transform: translateY(-220px);
-	transition: .8s ease-in-out;
-}
-.login label{
+	transition: 0.8s ease-in-out;
+  }
+  
+  .login label {
 	color: #146ea1;
-	transform: scale(.6);
-}
-
-#chk:checked ~ .login{
+	transform: scale(0.6);
+  }
+  
+  #chk:checked ~ .login {
 	transform: translateY(-610px);
-}
-#chk:checked ~ .login label{
-	transform: scale(1);	
-}
-#chk:checked ~ .signup label{
-	transform: scale(.6);
-}
+  }
+  
+  #chk:checked ~ .login label {
+	transform: scale(1);
+  }
+  
+  #chk:checked ~ .signup label {
+	transform: scale(0.6);
+  }
+  
+  /* Center the login div */
+  .login {
+	margin: auto;
+  }
+  

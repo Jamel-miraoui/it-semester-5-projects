@@ -1,0 +1,38 @@
+[
+  {
+    "firstName": "jamel",
+    "lastName": "miraoui",
+    "age": 23,
+    "className": "DSI"
+  },
+  {
+    "firstName": "mohamed",
+    "lastName": "grami",
+    "age": 22,
+    "className": "MDW"
+  },
+  {
+    "firstName": "ahmed",
+    "lastName": "oueslati",
+    "age": 29,
+    "className": "DSI"
+  },
+  {
+    "firstName": "amira",
+    "lastName": "ben youssef",
+    "age": 25,
+    "className": "DSI"
+  },
+  {
+    "firstName": "molka",
+    "lastName": "bata",
+    "age": 13,
+    "className": "DSI"
+  },
+  {
+    "firstName": "sarra",
+    "lastName": "manaaa",
+    "age": 20,
+    "className": "MDW"
+  }
+]

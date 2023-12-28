@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Étudiant Upload</title>
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 20px;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background-color: #fff;
+      }
+
+      table, th, td {
+        border: 1px solid #ddd;
+      }
+
+      th, td {
+        padding: 12px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      form {
+        margin-top: 20px;
+      }
+
+      input[type="file"] {
+        padding: 10px;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      h2 {
+        margin-top: 40px;
+        color: #333;
+      }
+
+      td:last-child form {
+        display: inline;
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Étudiant Statistics</h1>
+    <table>
+        <tr>
+            <th>Class Name</th>
+            <th>Count</th>
+        </tr>
+        <% etudiantStatistics.forEach(stat => { %>
+            <tr>
+                <td><%= stat._id %></td>
+                <td><%= stat.count %></td>
+            </tr>
+        <% }); %>
+    </table>
+    <h1>Upload Étudiant Data</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="file" name="file" accept=".json" required />
+      <button type="submit">Upload</button>
+    </form>
+    <hr />
+    <h2>Étudiants</h2>
+    <table>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Class Name</th>
+        <th>Action</th>
+      </tr>
+      <% if (etudiants && etudiants.length > 0) { %> <%
+      etudiants.forEach(etudiant => { %>
+      <tr>
+        <td><%= etudiant.firstName %></td>
+        <td><%= etudiant.lastName %></td>
+        <td><%= etudiant.age %></td>
+        <td><%= etudiant.className %></td>
+        <td>
+          <form action="/delete/<%= etudiant._id %>" method="post">
+            <button type="submit">Delete</button>
+          </form>       
+        </td>
+      </tr>
+      <% }); %> <% } else { %>
+      <tr>
+        <td colspan="5">No etudiants found</td>
+      </tr>
+      <% } %>
+    </table>
+  </body>
+</html>

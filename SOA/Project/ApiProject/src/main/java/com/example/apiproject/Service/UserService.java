@@ -4,7 +4,6 @@ import com.example.apiproject.Models.User;
 import com.example.apiproject.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -39,5 +38,4 @@ public class UserService {
         return userRepository.findByFullName(fullName)
                 .orElseThrow(() -> new RuntimeException("User not found with full name: " + fullName));
     }
-
 }

@@ -27,8 +27,8 @@ public class Dbhelper extends SQLiteOpenHelper {
     public Dbhelper(Context context, String nom, SQLiteDatabase.CursorFactory cursorfactory, int version) {
         super(context, nom , cursorfactory, version ); }
     public Dbhelper(Context context) {
-        super(context, DATABASE_NAME ,null, DATABASE_VERSION
-        ); }
+        super(context, DATABASE_NAME ,null, DATABASE_VERSION);
+    }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -51,6 +51,11 @@ public class Dbhelper extends SQLiteOpenHelper {
         SQLiteDatabase maDb = this.getWritableDatabase();
         Cursor c = maDb.query(TableEtudiant, new String[]{COLONNE_id, COLONNE_name, COLONNE_number}, null, null, null, null, null);
         return cursortoEtudiants(c);
+    }
+    public void delete() {
+        SQLiteDatabase maDb = this.getWritableDatabase();
+        maDb.delete(TableEtudiant,COLONNE_id + " =? ",new String []{"50"}) ;
+        
     }
 
     private ArrayList<user> cursortoEtudiants(Cursor c) {
